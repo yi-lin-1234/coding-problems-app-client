@@ -8,7 +8,7 @@ import { Body } from "../types/type";
 
 //prod
 const instance = axios.create({
-  baseURL: "https://todolist-server-railway-production.up.railway.app",
+  baseURL: "https://coding-problems-app-server-production.up.railway.app",
 });
 
 //🟢 🟢 🟢 🟢 🟢 🟢 🟢 🟢 🟢 🟢( POST )🟢 🟢 🟢 🟢 🟢 🟢 🟢 🟢 🟢 🟢
