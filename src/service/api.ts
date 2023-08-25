@@ -14,7 +14,7 @@ const instance = axios.create({
 //🟢 🟢 🟢 🟢 🟢 🟢 🟢 🟢 🟢 🟢( POST )🟢 🟢 🟢 🟢 🟢 🟢 🟢 🟢 🟢 🟢
 
 export const createNewQuestion = async (body: Body) => {
-  await instance.post("", body);
+  await instance.post("new", body);
 };
 
 //🔵 🔵 🔵 🔵 🔵 🔵 🔵 🔵 🔵 🔵( GET )🔵 🔵 🔵 🔵 🔵 🔵 🔵 🔵 🔵 🔵
