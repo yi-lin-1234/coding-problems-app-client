@@ -2,8 +2,13 @@ import axios from "axios";
 import { Body } from "../types/type";
 
 //dev
+// const instance = axios.create({
+//   baseURL: "http://localhost:8080",
+// });
+
+//prod
 const instance = axios.create({
-  baseURL: "http://localhost:8080",
+  baseURL: "https://todolist-server-railway-production.up.railway.app",
 });
 
 //🟢 🟢 🟢 🟢 🟢 🟢 🟢 🟢 🟢 🟢( POST )🟢 🟢 🟢 🟢 🟢 🟢 🟢 🟢 🟢 🟢
