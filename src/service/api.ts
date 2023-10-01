@@ -36,7 +36,6 @@ export const getQuestionById = async (id: string) => {
 
 export const countQuestionsByTopic = async () => {
   const response = await instance.get("/count-by-topic");
-  console.log(response.data);
   return response.data;
 };
 
