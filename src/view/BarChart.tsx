@@ -4,6 +4,7 @@ import { Bar } from "react-chartjs-2";
 import {
   countQuestionsByTopic,
   countQuestionsByDifficulty,
+  getTotalCount,
 } from "../service/api";
 import {
   ChartData,
@@ -15,6 +16,8 @@ import {
 import "chart.js/auto";
 
 function BarChart() {
+  const [totalCount, setTotalCount] = useState<number>(0);
+
   const [chartDataTopic, setChartDataTopic] = useState<ChartData>({
     labels: [],
     datasets: [
@@ -44,6 +47,9 @@ function BarChart() {
     async function initialSetUp() {
       setIsLoading(true);
       try {
+        const count = await getTotalCount();
+        setTotalCount(count);
+
         const groupedDataTopic = await countQuestionsByTopic();
         const labelsTopic = groupedDataTopic.map(
           (obj: GroupedDataTopic) => obj.topic
@@ -110,6 +116,12 @@ function BarChart() {
               they're categorized by topic and difficulty. Understand where the
               challenges lie!
             </p>
+          </div>
+
+          <div className="mt-6 flex flex-col items-center text-center">
+            <h3 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
+              Total Questions: {totalCount}
+            </h3>
           </div>
 
           <div className="mt-16 grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:gap-x-8">

@@ -24,6 +24,11 @@ export const getAllQuestions = async () => {
   return response.data;
 };
 
+export const getTotalCount = async () => {
+  const response = await instance.get("total-count");
+  return response.data;
+};
+
 export const getQuestionById = async (id: string) => {
   const response = await instance.get(`question/${id}`);
   return response.data;
